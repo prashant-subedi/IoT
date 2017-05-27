@@ -1,0 +1,30 @@
+<html>
+<head>
+    {%load staticfiles %}
+
+    <title>
+        IoT interface
+    </title>
+    <link rel="stylesheet" href="{% static 'w3.css' %}">
+
+</head>
+<body>
+<h1>
+    <div class="w3-container">
+        <div class="w3-blue">List of Devices</div>
+        {%for i in devices%}
+              <a href="?id={{i.device_id}}"><div class="w3-panel">
+                    <div class="w3-topbar w3-leftbar w3-rightbar w3-bottombar">
+                        {{i.get_device_name_display}}
+                {% if i.device_status%}
+                    on
+                {%else%} off
+                {%endif%}
+                    </div>
+              </div></a>
+                <br>
+        {%endfor%}
+    </div>
+</h1>
+</body>
+</html>
