@@ -58,8 +58,8 @@
       <file leaf-file-name="authenticate_page.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/interface/templates/authenticate_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="50" column="202" lean-forward="false" selection-start-line="50" selection-start-column="202" selection-end-line="50" selection-end-column="202" />
+            <state relative-caret-position="597">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,7 +157,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
+    <option name="x" value="960" />
     <option name="width" value="961" />
     <option name="height" value="1053" />
   </component>
@@ -521,7 +521,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="961" height="1053" extended-state="4" />
+    <frame x="960" y="0" width="961" height="1053" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23983316" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -927,8 +927,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/interface/templates/authenticate_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="50" column="202" lean-forward="false" selection-start-line="50" selection-start-column="202" selection-end-line="50" selection-end-column="202" />
+        <state relative-caret-position="597">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
