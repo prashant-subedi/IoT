@@ -10,3 +10,6 @@ class Device(models.Model):
     ],max_length=20)
     room_number=models.IntegerField(default=0)
 
+
+    def __str__(self):
+        return self.device_name

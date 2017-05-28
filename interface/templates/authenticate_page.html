@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        {% load static %}
+		<title>Home Automation</title>
+		<link rel="shortcut icon" href="{% static 'images/home_automation_logo.png'%}" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="text-center">
+				<p class="large theme-color">Login</p>
+				<img class="logo" src="{% static 'images/home_automation_logo.png'%}" alt="Home Automation Logo">
+			</div>
+
+			<div class="row" >
+				<div class="col-md-6 col-md-offset-3">
+						<form class="form-horizontal padding-top" action="" method="post">{% csrf_token %}
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="user_name">Email:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="user_name" placeholder="Username" name="username">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="pwd">Password:</label>
+								<div class="col-sm-10">
+									<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<div class="checkbox">
+										<label><input type="checkbox" name="remember"> Remember me</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" class="btn btn-primary" value="Login">Submit</button>
+								</div>
+							</div>
+						</form>
+				</div>
+			</div>
+			<footer class="row">
+				<div class="text-center">
+					<p class="small footer-text">Created by Team Sudo for COMP 308<br>Interface design by <a href="#">@unovaxan</a></p>
+				</div>
+			</footer>
+			<!--
+			<div class="row">
+						<div class="col-md-6">
+
+						</div>
+						<div class="col-md-6">
+
+						</div>
+			</div>
+			-->
+		</div>
+		<script src="js/jquery-3.2.1.min.js">
+		</script>
+		<script src="js/bootstrap.min.js">
+		</script>
+	</body>
+</html>

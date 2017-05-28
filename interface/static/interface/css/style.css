@@ -1,0 +1,22 @@
+.logo {
+	max-width: 200px;
+	
+}
+.padding-top {
+	padding-top: 20px;
+}
+.theme-color {
+	color: #CD7F32;
+}
+.large {
+	font-size: 30px;
+}
+.small {
+	font-size: 0.7em;
+}
+.footer-text {
+	color: #777;
+}
+footer a {
+ color: #eee;
+}
