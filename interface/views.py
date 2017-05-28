@@ -36,7 +36,7 @@ def login(request):
         auth(request,a)
 
         return redirect('/')
-    return  render(request,'login.html')
+    return  render(request, 'authenticate_page.html',{})
 
 def pi(request):
     json={}
