@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from .models import Device
 from django.shortcuts import redirect
-from django.contrib.auth import authenticate,login as auth
+from django.contrib.auth import authenticate,login as auth,logout as lout
 # Create your views here.
 def default(request):
     print("default")
@@ -11,7 +11,8 @@ def default(request):
     return  redirect("/login")
 
 def home(request):
-    print("home")
+    if not request.user.is_authenticated:
+        return redirect('/')
     if 'id' in request.GET:
         if(request.GET["id"]!=""):
             print("Hello")
@@ -20,19 +21,20 @@ def home(request):
                 a.update(device_status=False)
             else:
                 a.update(device_status=True)
+        return redirect("/home")
     devices=Device.objects.all()
     return render(request,"interface/home.html",{"devices":devices })
 
 def login(request):
-
+    if request.user.is_authenticated:
+        return redirect('/')
     if request.method=="POST":
         username=request.POST['username']
         password=request.POST['password']
         a=authenticate(username=username,password=password)
         print(a)
         if a == None:
-            return  render(request,'login.html',{"message":"Please enter vaild username and password"})
-            print("asdasdasd")
+            return render(request, 'authenticate_page.html', {"message":"Please enter a vaild user name and passowrd."})
         auth(request,a)
 
         return redirect('/')
@@ -45,3 +47,7 @@ def pi(request):
         json[i.device_id]=i.device_status
     return JsonResponse(json)
 
+
+def logout(request):
+    lout(request)
+    return redirect("/")
