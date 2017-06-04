@@ -14,9 +14,41 @@
 .small {
 	font-size: 0.7em;
 }
+footer {
+	margin-top: 10px;
+}
 .footer-text {
 	color: #777;
 }
 footer a {
  color: #eee;
+}
+.header-logo {
+	max-width: 100px;
+	}
+
+.controls {
+	background-color: #34495e;
+	padding: 10px;
+	padding-bottom: 25px;
+}
+.controls li {
+	list-style-type: none;
+	line-height: 2em;
+	padding: 10px;
+}
+
+.fa {
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 2em;
+}
+.fa-toggle-on {
+	color: green;
+	transition: 0.5s;
+}
+
+.fa-toggle-off {
+	color: red;
+	transition: 0.5s;
 }
