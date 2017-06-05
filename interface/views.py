@@ -30,8 +30,8 @@ def home(request):
 
 
 def login(request):
-    if request.user.is_authenticated:
-        return redirect('/')
+    if not request.user.is_authenticated:
+        return render(request, "interface/authenticate_page.html", {})
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
@@ -56,4 +56,4 @@ def pi(request):
 
 def logout(request):
     lout(request)
-    return redirect("/")
+    return redirect('/login')
