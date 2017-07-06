@@ -38,30 +38,33 @@
         </form>
     </nav>
     <div class="row">
+         <h2>Controls</h2>
         <div class="controls col-md-12">
-
-            <h2>Controls</h2>
             <p class="small">You can click on the toggle switch to change the status of the corresponding device.</p>
-            <li>
-                <div><input type="hidden" id="living-room-lights" name="living-room-lights" class="switch"/><i
-                        class="fa fa-toggle-on fa-2x"></i><label for="living-room-lights">Living Room Lights</label>
-                </div>
-            </li>
-            <li>
-                <div><input type="hidden" id="bed-room-lights" name="bed-room-lights" class="switch"/><i
-                        class="fa fa-toggle-off fa-2x"></i><label for="bed-room-lights">Bed Room Lights</label>
-                </div>
-            </li>
-            <li>
-                <div><input type="hidden" id="switch1" name="fan" class="fan"/><i
-                        class="fa fa-toggle-off fa-2x"></i><label for="bed-fan">Fan</label>
-                </div>
-            </li>
-            <li>
-                <div><input type="hidden" id="study-lamp" name="study-lamp" class="switch"/><i
-                        class="fa fa-toggle-on fa-2x"></i><label for="study-lamp">Study Lamp</label>
-                </div>
-            </li>
+            {%for i in devices%}
+              <a href="?id={{i.device_id}}"><div class="w3-panel">
+                  <div class="w3-topbar w3-leftbar w3-rightbar w3-bottombar">
+
+                    {% if i.device_status%}
+                      <li>
+                          <div><input type="hidden" id="living-room-lights" name="living-room-lights" class="switch"/><i
+                            class="fa fa-toggle-on fa-2x"></i><label for="living-room-lights"> {{i.get_device_name_display}}</label>
+                          </div>
+                      </li>
+                      {%else%}
+                       <li>
+                          <div><input type="hidden" id="living-room-lights" name="living-room-lights" class="switch"/><i
+                            class="fa fa-toggle-off fa-2x"></i><label for="living-room-lights"> {{i.get_device_name_display}}</label>
+                          </div>
+                      </li>
+                     {%endif%}
+                    </div>
+              </div></a>
+                <br>
+            {%endfor%}
+
+
+
 
         </div>
     </div>

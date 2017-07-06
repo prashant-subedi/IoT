@@ -26,22 +26,22 @@ def home(request):
                 a.update(device_status=True)
         return redirect("/home")
     devices = Device.objects.all()
+    print(devices)
     return render(request, "interface/index.html", {"devices": devices})
 
 
 def login(request):
-    if not request.user.is_authenticated:
-        return render(request, "interface/authenticate_page.html", {})
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
         a = authenticate(username=username, password=password)
+        print ("Hello ****\n\n\n\n\n************")
+
         print(a)
         if a == None:
             return render(request, "interface/authenticate_page.html",
                           {"message": "Please enter a vaild user name and passowrd."})
         auth(request, a)
-
         return redirect('/')
     return render(request, "interface/authenticate_page.html", {})
 
@@ -52,6 +52,7 @@ def pi(request):
     for i in devices:
         json[i.device_id] = i.device_status
     return JsonResponse(json)
+
 
 
 def logout(request):
